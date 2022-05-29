@@ -1,5 +1,0 @@
-@fast-mind/mindtree:build: cache hit, replaying output [2m77a432878abec5c6[0m
-[35m@fast-mind/mindtree:build: [0m
-[35m@fast-mind/mindtree:build: [0m> @fast-mind/mindtree@1.0.0 build /Users/nishimoridaisuke/dev/projects/fast-mind/prototype/packages/mindtree
-[35m@fast-mind/mindtree:build: [0m> pnpm tsc
-[35m@fast-mind/mindtree:build: [0m
