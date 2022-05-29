@@ -1,7 +1,7 @@
-type MindSettings = {
+type MindSettings = Readonly<{
   nodePaddingX: number,
   nodePaddingY: number,
-}
+}>
 
 class MindTree {
   #settings: MindSettings
