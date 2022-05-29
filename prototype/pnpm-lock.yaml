@@ -4,8 +4,10 @@ importers:
 
   .:
     specifiers:
+      tsc: ^2.0.4
       turbo: ^1.2.14
     devDependencies:
+      tsc: 2.0.4
       turbo: 1.2.14
 
   packages/mindtree:
@@ -15,6 +17,11 @@ importers:
       typescript: 4.7.2
 
 packages:
+
+  /tsc/2.0.4:
+    resolution: {integrity: sha512-fzoSieZI5KKJVBYGvwbVZs/J5za84f2lSTLPYf6AGiIf43tZ3GNrI1QzTLcjtyDDP4aLxd46RTZq1nQxe7+k5Q==}
+    hasBin: true
+    dev: true
 
   /turbo-darwin-64/1.2.14:
     resolution: {integrity: sha512-Fdx212fvhcbF/KKnSoenTtNLZ5Wzl+DDBmwHoHXmG2DX/1qFk4HD1/D6waCySZU1Hu1bQToIimEyrWgwAkCVbQ==}
