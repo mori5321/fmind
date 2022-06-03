@@ -1,2 +1,3 @@
 build:
-	pnpm turbo run build
+	pnpm exec turbo run build
+

@@ -3,21 +3,21 @@ type MindSettings = Readonly<{
   nodePaddingY: number,
 }>
 
-class MindTree {
+export class MindTree {
   #settings: MindSettings
-  #children: MindNode[]
+  #nodes: MindNode[]
 
   constructor(settings: MindSettings) {
     this.#settings = settings
-    this.#children = []
+    this.#nodes = []
   }
 
   addNode(node: MindNode): void {
-    this.#children.push(node)
+    this.#nodes.push(node)
   }
 
-  getChildren(): MindNode[] {
-    return this.#children
+  getNodes(): MindNode[] {
+    return this.#nodes
   }
 
   getSettings(): MindSettings {
@@ -25,23 +25,16 @@ class MindTree {
   }
 }
 
-class MindNode {
+export class MindNode {
   #content: string
-  #children: MindNode[]
+  // parentId
 
   constructor(content: string) {
     this.#content = content
-    this.#children = []
   }
 
   getContent(): string {
     return this.#content
   }
-
-  getChildren(): MindNode[] {
-    return this.#children
-  }
 }
-
-
 

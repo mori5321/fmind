@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {
     "build": "pnpm exec tsc",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build:watch": "pnpm exec tsc --watch",
+    "test": "pnpm exec jest",
+    "test:watch": "pnpm exec jest --watch"
   },
   "keywords": [],
   "author": "",
