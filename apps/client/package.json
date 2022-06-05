@@ -1,6 +1,5 @@
 {
-  "name": "@fast-mind/client",
-  "private": true,
+  "name": "@fmind/client",
   "version": "0.0.0",
   "scripts": {
     "dev": "vite",
@@ -19,4 +18,3 @@
     "vite": "^2.9.9"
   }
 }
-
