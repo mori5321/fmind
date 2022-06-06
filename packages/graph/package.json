@@ -1,5 +1,5 @@
 {
-  "name": "@fmind/mindtree",
+  "name": "@fmind/graph",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -13,6 +13,11 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@types/nanoid": "^3.0.0",
     "typescript": "^4.7.2"
+  },
+  "dependencies": {
+    "fp-ts": "^2.12.1",
+    "nanoid": "^3.3.4"
   }
 }
