@@ -1,0 +1,9 @@
+# 試したいやつ
+- Suspense
+- SuspenseCache
+- Relay
+- Tailwind
+- Remix
+- Redux
+- useSWR
+- Cloudflare
