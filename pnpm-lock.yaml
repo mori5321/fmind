@@ -27,9 +27,11 @@ importers:
       react-dom: ^18.0.0
       typescript: ^4.6.3
       vite: ^2.9.9
+      wouter: 2.8.0-alpha.2
     dependencies:
       react: 18.1.0
       react-dom: 18.1.0_react@18.1.0
+      wouter: 2.8.0-alpha.2_react@18.1.0
     devDependencies:
       '@types/react': 18.0.10
       '@types/react-dom': 18.0.5
@@ -2868,6 +2870,14 @@ packages:
     dependencies:
       isexe: 2.0.0
     dev: true
+
+  /wouter/2.8.0-alpha.2_react@18.1.0:
+    resolution: {integrity: sha512-aPsL5m5rW9RiceClOmGj6t5gn9Ut2TJVr98UDi1u9MIRNYiYVflg6vFIjdDYJ4IAyH0JdnkSgGwfo0LQS3k2zg==}
+    peerDependencies:
+      react: '>=16.8.0'
+    dependencies:
+      react: 18.1.0
+    dev: false
 
   /wrap-ansi/7.0.0:
     resolution: {integrity: sha512-YVGIj2kamLSTxw6NsZjoBxfSwsn0ycdesmc4p+Q21c5zPuZ1pl+NfxVdxPtdHvmNVOQ6XSYG4AUtyt/Fi7D16Q==}
