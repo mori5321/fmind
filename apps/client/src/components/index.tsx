@@ -1,5 +1,5 @@
 import { Route } from "wouter";
-import { ProtoPage } from "./components/pages/ProtoPage";
+import { ProtoPage } from "./pages/ProtoPage";
 
 const App = () => {
   return (
@@ -9,4 +9,4 @@ const App = () => {
   );
 };
 
-export default App;
+export { App };
