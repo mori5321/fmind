@@ -1,3 +1,3 @@
-const Bubble = <div>Bubble</div>;
+const Bubble = () => <div>Bubble</div>;
 
 export { Bubble };
