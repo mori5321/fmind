@@ -1,0 +1,25 @@
+@import "../../../styles/color.scss";
+@import "../../../styles/layout.scss";
+@import "../../../styles/font.scss";
+
+.bubble {
+  border-color: $primaryColor;
+  border-width: $borderLg;
+  border-style: solid;
+
+  display: flex;
+  width: fit-content;
+
+  border-radius: $borderRadius;
+  box-sizing: border-box;
+
+  .bubbleText {
+    color: $fontColorBasic;
+    font-weight: bold;
+    font-size: $fontSizeDefault; 
+  }
+}
+
+.bubbleSm {
+  padding: $paddingMd $paddingLg;
+}

@@ -1,5 +1,5 @@
-import { Bubble } from ".";
+import { Bubble as Component } from ".";
 
-export const BubbleStory = () => {
-  return <div></div>;
+export const Bubble = () => {
+  return <Component />;
 };
