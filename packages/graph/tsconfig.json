@@ -20,7 +20,9 @@
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "importsNotUsedAsValues": "error",
-    "checkJs": false
+    "checkJs": false,
+    "declaration": true,
+    "sourceMap": true
   },
   "include": ["./src/**/*.ts"]
 }
