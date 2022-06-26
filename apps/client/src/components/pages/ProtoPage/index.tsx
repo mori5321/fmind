@@ -1,5 +1,13 @@
+import { MockMindNode, ProtoPageLayout } from "./layout";
+
 const ProtoPage = () => {
-  return <h1>Proto Page</h1>;
+  const mockMindNodes: MockMindNode[] = [
+    { text: "Hello" },
+    { text: "World" },
+    { text: "This is" },
+  ];
+
+  return <ProtoPageLayout mindNodes={mockMindNodes} />;
 };
 
 export { ProtoPage };

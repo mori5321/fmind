@@ -9,3 +9,8 @@ test.graph:
 
 run.apps:
 	pnpm --filter ./apps/* run dev
+
+run.ladle:
+	pnpm ladle serve
+
+
