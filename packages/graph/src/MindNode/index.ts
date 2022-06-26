@@ -7,8 +7,18 @@ export interface IdProvider {
 
 export type MindNode = Readonly<{
   id: string,
+  text: string,
 }>;
 
-export const MindNode = {
-  build: () => MindNodeBuilder.build(NodeIdProvider)
+const setText = (mindNode: MindNode, text: string): MindNode => {
+  return {
+    ...mindNode,
+    text, 
+  }
 }
+
+export const MindNode = {
+  build: () => MindNodeBuilder.build(NodeIdProvider),
+  setText,
+}
+
