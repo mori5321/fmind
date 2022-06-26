@@ -1,4 +1,5 @@
 import { MockMindNode, ProtoPageLayout } from "./layout";
+// import { MindNode } from "@fmind/graph";
 
 const ProtoPage = () => {
   const mockMindNodes: MockMindNode[] = [

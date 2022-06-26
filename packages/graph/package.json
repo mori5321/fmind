@@ -2,10 +2,11 @@
   "name": "@fmind/graph",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
   "scripts": {
-    "build": "pnpm exec tsc",
-    "build:watch": "pnpm exec tsc --watch",
+    "build": "pnpm exec tsc --project ./tsconfig.json",
+    "build:watch": "pnpm exec tsc --watch --project ./tsconfig.json",
     "test": "pnpm exec jest",
     "test:watch": "pnpm exec jest --watch"
   },
