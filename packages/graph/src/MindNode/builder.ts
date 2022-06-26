@@ -4,6 +4,7 @@ export const MindNodeBuilder = {
   build: (idProvider: IdProvider): MindNode => {
     return {
       id: idProvider.run(),
+      text: "",
     }
   }
 }
