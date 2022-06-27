@@ -1,14 +1,14 @@
-import { MockMindNode, ProtoPageLayout } from "./layout";
-// import { MindNode } from "@fmind/graph";
+import { ProtoPageLayout } from "./layout";
+import { useMindNodes } from "./hooks";
 
 const ProtoPage = () => {
-  const mockMindNodes: MockMindNode[] = [
-    { text: "Hello" },
-    { text: "World" },
-    { text: "This is" },
-  ];
+  const { mindNodes, addNewNode } = useMindNodes();
 
-  return <ProtoPageLayout mindNodes={mockMindNodes} />;
+  const handleClickAdd = addNewNode;
+
+  return (
+    <ProtoPageLayout mindNodes={mindNodes} handleClickAdd={handleClickAdd} />
+  );
 };
 
 export { ProtoPage };
