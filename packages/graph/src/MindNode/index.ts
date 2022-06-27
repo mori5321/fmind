@@ -18,7 +18,7 @@ const setText = (mindNode: MindNode, text: string): MindNode => {
 }
 
 export const MindNode = {
-  build: () => MindNodeBuilder.build(NodeIdProvider),
+  build: (text: string = "") => MindNodeBuilder.build(NodeIdProvider, text),
   setText,
 }
 

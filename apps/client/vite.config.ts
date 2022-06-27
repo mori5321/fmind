@@ -10,6 +10,11 @@ export default defineConfig({
   preview: {
     port: 9002
   },
+  optimizeDeps: {
+    // https://vitejs.dev/guide/dep-pre-bundling.html#automatic-dependency-discovery
+    // https://github.com/vitejs/vite/issues/2679
+    include: ["@fmind/graph"],
+  },
   css: {
     postcss: {
       plugins: [

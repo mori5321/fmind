@@ -22,6 +22,7 @@
     "importsNotUsedAsValues": "error",
     "checkJs": false,
     "declaration": true,
+    "declarationMap": true,
     "sourceMap": true
   },
   "include": ["./src/**/*.ts"]
