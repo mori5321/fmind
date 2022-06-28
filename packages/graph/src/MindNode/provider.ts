@@ -1,9 +1,10 @@
-import {nanoid} from 'nanoid';
+import { nanoid } from 'nanoid'
+
 import type { IdProvider } from '.'
 
 const BaseIdProvider = {
   run: (prefix: string, length: number): string => {
-    return prefix + "-" + nanoid(length) 
+    return prefix + '-' + nanoid(length) 
   }
 }
 

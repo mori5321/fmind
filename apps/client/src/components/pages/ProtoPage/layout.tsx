@@ -1,6 +1,7 @@
-import { MindNode } from "@fmind/graph";
-import { Bubble } from "../../models/Bubble";
-import styles from "./styles.module.scss";
+import { MindNode } from '@fmind/graph'
+
+import { Bubble } from '../../models/Bubble'
+import styles from './styles.module.scss'
 
 type ProtoPageLayoutProps = Readonly<{
   mindNodes: MindNode[];
@@ -18,4 +19,4 @@ export const ProtoPageLayout = ({
     ))}
     <button onClick={handleClickAdd}>Add</button>
   </>
-);
+)

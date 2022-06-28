@@ -1,4 +1,4 @@
-import type { MindNode, IdProvider } from ".";
+import type { MindNode, IdProvider } from '.'
 
 export const MindNodeBuilder = {
   build: (idProvider: IdProvider, text: string): MindNode => {

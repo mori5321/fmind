@@ -1,4 +1,4 @@
-import type { MindNode } from "../MindNode"
+import type { MindNode } from '../MindNode'
 
 export type MindGraph = Readonly<{
   nodes: MindNode[]

@@ -1,5 +1,5 @@
-import { MindNodeBuilder } from "./builder";
-import { NodeIdProvider } from "./provider";
+import { MindNodeBuilder } from './builder'
+import { NodeIdProvider } from './provider'
 
 export interface IdProvider {
   run: () => string
@@ -18,7 +18,7 @@ const setText = (mindNode: MindNode, text: string): MindNode => {
 }
 
 export const MindNode = {
-  build: (text: string = "") => MindNodeBuilder.build(NodeIdProvider, text),
+  build: (text = '') => MindNodeBuilder.build(NodeIdProvider, text),
   setText,
 }
 

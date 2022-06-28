@@ -1,10 +1,10 @@
-import {MindNode} from "@fmind/graph"
-import {useCallback, useState} from "react";
+import { MindNode } from '@fmind/graph'
+import { useCallback, useState } from 'react'
 
 const mockData: MindNode[] = [
-    MindNode.build("Hello"),
-    MindNode.build("World"),
-    MindNode.build("!!!"),
+  MindNode.build('Hello'),
+  MindNode.build('World'),
+  MindNode.build('!!!'),
 ]
 
 export type UseMindNodes = () => {
@@ -12,11 +12,11 @@ export type UseMindNodes = () => {
   addNewNode: () => void,
 }
 export const useMindNodes = () => {
-  const [mindNodes, setMindNode] = useState(mockData);
+  const [mindNodes, setMindNode] = useState(mockData)
 
   const addNewNode = useCallback(() => {
-    const newNode = MindNode.build("Yeah");
-    setMindNode([...mindNodes, newNode]);
+    const newNode = MindNode.build('Yeah')
+    setMindNode([...mindNodes, newNode])
   }, [mindNodes])
 
   return {
