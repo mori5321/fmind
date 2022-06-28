@@ -1,19 +1,22 @@
-import { Bubble } from "../../models/Bubble";
-import styles from "./styles.module.scss";
+import { MindNode } from '@fmind/graph'
 
-export type MockMindNode = Readonly<{
-  text: string;
-}>;
+import { Bubble } from '../../models/Bubble'
+import styles from './styles.module.scss'
 
 type ProtoPageLayoutProps = Readonly<{
-  mindNodes: MockMindNode[];
+  mindNodes: MindNode[];
+  handleClickAdd: () => void;
 }>;
-export const ProtoPageLayout = ({ mindNodes }: ProtoPageLayoutProps) => (
+export const ProtoPageLayout = ({
+  mindNodes,
+  handleClickAdd,
+}: ProtoPageLayoutProps) => (
   <>
     {mindNodes.map((mindNode) => (
       <div className={styles.bubbleWrapper}>
         <Bubble text={mindNode.text} />
       </div>
     ))}
+    <button onClick={handleClickAdd}>Add</button>
   </>
-);
+)

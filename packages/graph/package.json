@@ -3,9 +3,16 @@
   "version": "1.0.0",
   "description": "",
   "main": "lib/index.js",
+  "module": "esm/index.js",
   "types": "lib/index.d.ts",
+  "files": [
+    "lib",
+    "src"
+  ],
   "scripts": {
-    "build": "pnpm exec tsc --project ./tsconfig.json",
+    "build": "pnpm exec npm-run-all -s build:cjs build:esm",
+    "build:cjs": "pnpm exec tsc --project ./tsconfig.json --module commonjs --outDir ./lib",
+    "build:esm": "pnpm exec tsc --project ./tsconfig.json --module commonjs --outDir ./esm",
     "build:watch": "pnpm exec tsc --watch --project ./tsconfig.json",
     "test": "pnpm exec jest",
     "test:watch": "pnpm exec jest --watch"

@@ -1,2 +1,2 @@
-export * from "./MindNode";
-export * from "./MindGraph"
+export * from './MindNode'
+export * from './MindGraph'
