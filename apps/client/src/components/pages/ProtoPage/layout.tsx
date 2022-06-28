@@ -13,7 +13,7 @@ export const ProtoPageLayout = ({
 }: ProtoPageLayoutProps) => (
   <>
     {mindNodes.map((mindNode) => (
-      <div className={styles.bubbleWrapper}>
+      <div key={mindNode.id} className={styles.bubbleWrapper}>
         <Bubble text={mindNode.text} />
       </div>
     ))}
