@@ -23,6 +23,7 @@ module.exports = {
     'unused-imports',
   ],
   'rules': {
+    'react/react-in-jsx-scope': 'off',
     'object-curly-spacing': ['error', 'always'],
     'indent': [
       'error',
