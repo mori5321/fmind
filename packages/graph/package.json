@@ -12,7 +12,7 @@
   "scripts": {
     "build": "pnpm exec npm-run-all -s build:cjs build:esm",
     "build:cjs": "pnpm exec tsc --project ./tsconfig.json --module commonjs --outDir ./lib",
-    "build:esm": "pnpm exec tsc --project ./tsconfig.json --module commonjs --outDir ./esm",
+    "build:esm": "pnpm exec tsc --project ./tsconfig.json --module esnext --moduleResolution node --outDir ./esm",
     "build:watch": "pnpm exec tsc --watch --project ./tsconfig.json",
     "test": "pnpm exec jest",
     "test:watch": "pnpm exec jest --watch"
