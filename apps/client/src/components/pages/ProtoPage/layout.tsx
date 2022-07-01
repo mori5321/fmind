@@ -19,13 +19,17 @@ const MindNodes = () => {
   const handleClickClear = clearMindNodes
   return (
     <>
-      {mindNodes.map((mindNode) => (
-        <div key={mindNode.id} className={styles.bubbleWrapper}>
-          <Bubble text={mindNode.text} />
-        </div>
-      ))}
-      <button onClick={handleClickAdd}>Add</button>
-      <button onClick={handleClickClear}>Clear</button>
+      <div>
+        {mindNodes.map((mindNode) => (
+          <div key={mindNode.id} className={styles.bubbleWrapper}>
+            <Bubble text={mindNode.text} />
+          </div>
+        ))}
+      </div>
+      <div>
+        <button onClick={handleClickAdd}>Add</button>
+        <button onClick={handleClickClear}>Clear</button>
+      </div>
     </>
   )
 }
