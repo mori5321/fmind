@@ -1,5 +1,6 @@
 # feat
-- [ ] introduce Recoil as a state manager
+- [x] introduce Recoil as a state manager
 
 # chore
-- [ ] eslint (& prettier)
+- [x] eslint
+- [x] prettier
