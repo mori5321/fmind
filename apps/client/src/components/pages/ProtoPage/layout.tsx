@@ -1,5 +1,6 @@
 import { Suspense } from 'react'
 
+import { TargetKey, useKey } from '../../../hooks/useKey'
 import { useMindNodes } from '../../../stores/mindNodeStore'
 import { Bubble } from '../../models/Bubble'
 import styles from './styles.module.scss'
@@ -14,6 +15,7 @@ export const ProtoPageLayout = () => (
 
 const MindNodes = () => {
   const { mindNodes, addMindNode, clearMindNodes } = useMindNodes()
+  useKey(TargetKey.Tab, () => addMindNode())
 
   const handleClickAdd = addMindNode
   const handleClickClear = clearMindNodes
