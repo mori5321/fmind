@@ -1,12 +1,13 @@
+import { RecoilRoot } from 'recoil'
 import { Route } from 'wouter'
 
 import { ProtoPage } from './pages/ProtoPage'
 
 const App = () => {
   return (
-    <div>
+    <RecoilRoot>
       <Route path="/" component={ProtoPage} />
-    </div>
+    </RecoilRoot>
   )
 }
 
