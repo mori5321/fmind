@@ -57,7 +57,7 @@ const effect: AtomEffect<MindNode[]> = ({ onSet }) => {
 }
 
 
-const mindNodesState = atom<MindNode[]>({
+export const mindNodesState = atom<MindNode[]>({
   key: 'mindNodeState',
   default: mindNodeRepository.list(),
   effects: [

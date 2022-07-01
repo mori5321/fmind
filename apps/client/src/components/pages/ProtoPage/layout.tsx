@@ -15,7 +15,10 @@ export const ProtoPageLayout = () => (
 
 const MindNodes = () => {
   const { mindNodes, addMindNode, clearMindNodes } = useMindNodes()
-  useKey(TargetKey.Tab, () => addMindNode())
+  useKey(TargetKey.Tab, (e) => {
+    e.preventDefault()
+    addMindNode()
+  })
 
   const handleClickAdd = addMindNode
   const handleClickClear = clearMindNodes
