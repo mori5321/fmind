@@ -1,22 +1,31 @@
-import { MindNode } from '@fmind/graph'
+import { Suspense } from 'react'
 
+import { useMindNodes } from '../../../stores/mindNodeStore'
 import { Bubble } from '../../models/Bubble'
 import styles from './styles.module.scss'
 
-type ProtoPageLayoutProps = Readonly<{
-  mindNodes: MindNode[];
-  handleClickAdd: () => void;
-}>;
-export const ProtoPageLayout = ({
-  mindNodes,
-  handleClickAdd,
-}: ProtoPageLayoutProps) => (
+export const ProtoPageLayout = () => (
   <>
-    {mindNodes.map((mindNode) => (
-      <div key={mindNode.id} className={styles.bubbleWrapper}>
-        <Bubble text={mindNode.text} />
-      </div>
-    ))}
-    <button onClick={handleClickAdd}>Add</button>
+    <Suspense fallback={<div>Loading...</div>}>
+      <MindNodes />
+    </Suspense>
   </>
 )
+
+const MindNodes = () => {
+  const { mindNodes, addMindNode, clearMindNodes } = useMindNodes()
+
+  const handleClickAdd = addMindNode
+  const handleClickClear = clearMindNodes
+  return (
+    <>
+      {mindNodes.map((mindNode) => (
+        <div key={mindNode.id} className={styles.bubbleWrapper}>
+          <Bubble text={mindNode.text} />
+        </div>
+      ))}
+      <button onClick={handleClickAdd}>Add</button>
+      <button onClick={handleClickClear}>Clear</button>
+    </>
+  )
+}
