@@ -14,7 +14,16 @@ const ProtoPage = () => {
   const [stateMaps, setStateMaps] = useState<StateMap[]>([])
 
   const snapshot = useRecoilSnapshot()
-  const release = snapshot.retain()
+
+  let release: () => void
+  try {
+    release = snapshot.retain()
+  } catch {
+    alert('fail to retain')
+    release = () => {
+      alert('Release failed')
+    }
+  }
 
   const [currentStateMapIdx, setCurrentStateMapIdx] = useState(0)
 
@@ -30,7 +39,7 @@ const ProtoPage = () => {
         stateMap.release()
       }
     }
-  }, [snapshot])
+  }, [snapshot, setStateMaps, stateMaps])
 
   const gotoSnapshot = useGotoRecoilSnapshot()
 
@@ -52,6 +61,7 @@ const ProtoPage = () => {
 
   return (
     <>
+      <div>current {currentStateMapIdx}</div>
       <ProtoPageLayout />
     </>
   )
