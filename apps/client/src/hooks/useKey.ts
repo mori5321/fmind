@@ -1,14 +1,14 @@
-import { useMemo, useEffect, useRef } from 'react'
+import { useMemo, useEffect } from 'react'
 
 type Handler = (event: KeyboardEvent) => void;
 
-type PrevKeyState = 'up' | 'down'
+// type PrevKeyState = 'up' | 'down'
 
 export const useKey = (
   targetKey: string,
   handler: Handler
 ) => {
-  const prevKeyState = useRef<PrevKeyState>('up')
+  // const prevKeyState = useRef<PrevKeyState>('up')
 
 
   const memoizedHandler = useMemo(() => {
@@ -20,9 +20,9 @@ export const useKey = (
         event.preventDefault()
       }
 
-      if (prevKeyState.current === 'down') return
+      // if (prevKeyState.current === 'down') return
 
-      prevKeyState.current = 'down'
+      // prevKeyState.current = 'down'
 
       // Do not set preventDefault here. It's very buggy.
       if (event.key === targetKey) {
@@ -34,15 +34,15 @@ export const useKey = (
     return _handler
   }, [handler])
 
-  const onKeyUp = () => prevKeyState.current = 'up'
+  // const onKeyUp = () => prevKeyState.current = 'up'
 
   useEffect(() => {
     window.addEventListener('keydown', memoizedHandler)
-    window.addEventListener('keyup', onKeyUp)
+    // window.addEventListener('keyup', onKeyUp)
 
     return () => {
       window.removeEventListener('keydown', memoizedHandler)
-      window.removeEventListener('keyup', onKeyUp)
+      // window.removeEventListener('keyup', onKeyUp)
     }
   }, [memoizedHandler])  
 }
