@@ -8,6 +8,8 @@
   },
   "dependencies": {
     "@fmind/graph": "workspace:^1.0.0",
+    "@tanstack/virtual-core": "3.0.0-beta.2",
+    "@tanstack/react-virtual": "3.0.0-beta.2",
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
     "recoil": "^0.7.4",

@@ -5,7 +5,10 @@ import { App } from './components'
 import './styles/globals/normalize.css'
 import './styles/globals/global.css'
 
-ReactDOM.createRoot(document.getElementById('root')!).render(
+/* eslint-disable-next-line @typescript-eslint/no-non-null-assertion  */
+const target = document.getElementById('root')!
+
+ReactDOM.createRoot(target).render(
   <React.StrictMode>
     <App />
   </React.StrictMode>
