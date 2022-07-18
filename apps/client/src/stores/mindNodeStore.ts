@@ -1,5 +1,5 @@
 import { MindNode } from '@fmind/graph'
-import { atom, AtomEffect, useRecoilState } from 'recoil'
+import { atom, useRecoilState } from 'recoil'
       
 
 let mockMindNodesStore = [
@@ -26,10 +26,12 @@ const mindNodeRepository = {
   store: async (mindNode: MindNode) => {
     console.log('Repo: store')
     mockMindNodesStore = [...mockMindNodesStore, mindNode] 
+    console.log('Repo: store finished')
   },
   sync: async (mindNodes: MindNode[]) => {
     console.log('Repo: sync')
     mockMindNodesStore = mindNodes
+    console.log('Repo: sync finished')
   }
 }
 
@@ -50,19 +52,19 @@ const mindNodeRepository = {
 //   })
 // }
 
-const effect: AtomEffect<MindNode[]> = ({ onSet }) => {
-  onSet((newValue, _, isReset) => {
-    isReset ? mindNodeRepository.deleteAll() : mindNodeRepository.sync(newValue)
-  })
-}
+// const effect: AtomEffect<MindNode[]> = ({ onSet }) => {
+//   onSet((newValue, _, isReset) => {
+//     isReset ? mindNodeRepository.deleteAll() : mindNodeRepository.sync(newValue)
+//   })
+// }
 
 
-const mindNodesState = atom<MindNode[]>({
+export const mindNodesState = atom<MindNode[]>({
   key: 'mindNodeState',
   default: mindNodeRepository.list(),
-  effects: [
-    effect,
-  ]
+  // effects: [
+  //   effect,
+  // ]
 })
 
 
@@ -77,10 +79,16 @@ export const useMindNodes: UseMindNodes = () => {
 
   const addMindNode = () => {
     const newNode = MindNode.build('Yeah')
-    setMindNodes([...mindNodes, newNode])
+
+    const newNodes = [...mindNodes, newNode]
+    mindNodeRepository.store(newNode)
+    setMindNodes(newNodes)
   }
 
-  const clearMindNodes = () => setMindNodes([])
+  const clearMindNodes = () => {
+    mindNodeRepository.deleteAll()
+    setMindNodes([])
+  }
 
   return {
     mindNodes,
