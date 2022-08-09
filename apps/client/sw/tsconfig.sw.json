@@ -1,0 +1,11 @@
+{
+  "extends": "../tsconfig.json",
+  "compilerOptions": {
+    "lib": ["ESNext", "WebWorker"],
+    "noEmit": false,
+    "strict": true,
+    "outDir": "dist",
+    "target": "ESNext"
+  },
+  "include": ["sw"]
+}

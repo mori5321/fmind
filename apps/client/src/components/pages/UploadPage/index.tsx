@@ -47,7 +47,7 @@ export const UploadPage = () => {
     count,
     getScrollElement: () => parentRef.current,
     estimateSize: () => 20,
-    overscan: 5,
+    // }, [])
     debug: true,
     enableSmoothScroll: true,
   })
@@ -58,6 +58,30 @@ export const UploadPage = () => {
 
     return fileMap[key].file
   }
+
+  // Memo: Problem is No Controller...
+  const handleClickSw = () => {
+    console.log('Click')
+    const controller = navigator.serviceWorker.controller
+    if (!controller) {
+      console.log('no controller')
+    }
+    navigator.serviceWorker.controller?.postMessage('Hello')
+  }
+
+  const handleSwEvent = (event: MessageEvent) => {
+    console.log(`received: ${event.data}`)
+  }
+
+  useEffect(() => {
+    console.log('Registering')
+    navigator.serviceWorker.addEventListener('message', handleSwEvent)
+
+    return navigator.serviceWorker.removeEventListener(
+      'message',
+      handleSwEvent
+    )
+  }, [])
 
   // Workaround
   // https://github.com/TanStack/virtual/issues/322
@@ -70,6 +94,7 @@ export const UploadPage = () => {
   return (
     <div className={styles.wrapper}>
       <button onClick={handleOpenPicker}>Open</button>
+      <button onClick={handleClickSw}>SW</button>
       <h2>{keys.length}</h2>
       <div
         ref={parentRef}
